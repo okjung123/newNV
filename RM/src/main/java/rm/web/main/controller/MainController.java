@@ -2,14 +2,21 @@ package rm.web.main.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class MainController {
 	
-	@RequestMapping("/main/index.do")
+	@RequestMapping(value= "/main/index.do", method= RequestMethod.GET)
     public String home() {
         return "main/index";
     }
+	
+	@RequestMapping(value="/main/new.do", method= RequestMethod.GET)
+    public String New() {
+        return "main/new";
+    }
+	
 	
 	/**
 	 * 프로젝트내에서 롬복 설치 방법
