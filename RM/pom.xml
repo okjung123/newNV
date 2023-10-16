@@ -47,13 +47,9 @@
 	<!-- 스프링에서 JDBC 를 사용하기 위한 라이브러리 입니다. -->
 
 	<dependency>
-	
 	    <groupId>org.springframework</groupId>
-	
 	    <artifactId>spring-jdbc</artifactId>
-	
 	    <version>${org.springframework-version}</version>
-	
 	</dependency>
 	
 	<!-- JSP페이지에서 사용한 JSTL을 위한 라이브러리입니다. -->

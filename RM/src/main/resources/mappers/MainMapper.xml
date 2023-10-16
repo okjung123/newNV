@@ -1,11 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!DOCTYPE mapper PUBLIC 
+"-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 마이바티스 mybatis-config.xml 에 등록해야 별칭으로 사용할 수 있음 => 등록안할꺼면 사용구문을 모두 적으면 됨 -->
 
 <!-- 맵핑될 DAO 인터페이스의 Full name 을 줍니다. -->
 <mapper namespace="rm.web.main.mapper.MainMapper">
 
-	<select id="userSearch" resultType="String">
+
+<!--<select id="userSearch" resultType="String">
 		SELECT 1 AS TEST
-	</select>
+	</select> -->
 	
+	<!-- 유저정보 저장용 -->
+	<resultMap id="resultUser" type="UserVO">
+		<result column="mem_idx"           property="mem_idx" />	            <!--회원번호-->
+		<result column="mem_id"            	property="mem_id"/> 		        <!--아이디-->
+		<result column="mem_pw"            	property="mem_pw"	/>	            <!--비번-->
+		<result column="mem_name"         property="mem_name"	/>	   		<!--이름-->
+		<result column="mem_num"           property="mem_num" />			<!--휴대폰번호-->
+		<result column="mem_cre"          	property="mem_cre"/> 	    		<!--가입일-->
+		<result column="mem_date"         	property="mem_date"	/>     	<!--접속기록-->
+		<result column="mem_update"       property="mem_update" />		<!--정보수정일-->
+	</resultMap>
+
+		
+	<!-- 로그인 처리용 -->
+	<select id="selectUser"  parameterType="UserVO"  resultMap="resultUser">		
+      select * 
+      from web_member
+      where mem_id = #{ mem_id }
+	</select>
+
+	
+	<!-- 회원 전체 조회용 -->
+<!-- 	<select id = "selectUserList" parameterType="Paging" resultType="User">
+	<![CDATA[
+		select *
+		from (select rownum rnum, USER_ID, ADMIN_ID, USER_NICKNAME, USER_NAME, USER_PHONE, 
+			 USER_EMAIL, USER_BIRTH, USER_LEVEL, USER_STATUS, BAN_RELEASE_DATE, USER_POINT, USER_ACCESS, USER_ORIGINAL_PROFILE, USER_ENROLLDATE
+			 from (select * from tb_user order by user_id desc))
+		where rnum >= #{startRow} and rnum <= #{endRow}
+		]]>
+	</select>
+	 -->
+	
+		
+		
+		
 </mapper>
