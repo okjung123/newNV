@@ -19,7 +19,96 @@ public class UserVO implements java.io.Serializable{
 	public UserVO() {
 		super();
 	}
+	
+	public UserVO(String mem_idx, String mem_id, String mem_pw, String mem_name, String mem_num, String mem_cre,
+			String mem_date, String mem_update) {
+		super();
+		this.mem_idx = mem_idx;
+		this.mem_id = mem_id;
+		this.mem_pw = mem_pw;
+		this.mem_name = mem_name;
+		this.mem_num = mem_num;
+		this.mem_cre = mem_cre;
+		this.mem_date = mem_date;
+		this.mem_update = mem_update;
+	}
+	
 
+	@Override
+	public String toString() {
+		return "UserVO [mem_idx=" + mem_idx + ", mem_id=" + mem_id + ", mem_pw=" + mem_pw + ", mem_name=" + mem_name
+				+ ", mem_num=" + mem_num + ", mem_cre=" + mem_cre + ", mem_date=" + mem_date + ", mem_update="
+				+ mem_update + "]";
+	}
+	
+	
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((mem_cre == null) ? 0 : mem_cre.hashCode());
+		result = prime * result + ((mem_date == null) ? 0 : mem_date.hashCode());
+		result = prime * result + ((mem_id == null) ? 0 : mem_id.hashCode());
+		result = prime * result + ((mem_idx == null) ? 0 : mem_idx.hashCode());
+		result = prime * result + ((mem_name == null) ? 0 : mem_name.hashCode());
+		result = prime * result + ((mem_num == null) ? 0 : mem_num.hashCode());
+		result = prime * result + ((mem_pw == null) ? 0 : mem_pw.hashCode());
+		result = prime * result + ((mem_update == null) ? 0 : mem_update.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		UserVO other = (UserVO) obj;
+		if (mem_cre == null) {
+			if (other.mem_cre != null)
+				return false;
+		} else if (!mem_cre.equals(other.mem_cre))
+			return false;
+		if (mem_date == null) {
+			if (other.mem_date != null)
+				return false;
+		} else if (!mem_date.equals(other.mem_date))
+			return false;
+		if (mem_id == null) {
+			if (other.mem_id != null)
+				return false;
+		} else if (!mem_id.equals(other.mem_id))
+			return false;
+		if (mem_idx == null) {
+			if (other.mem_idx != null)
+				return false;
+		} else if (!mem_idx.equals(other.mem_idx))
+			return false;
+		if (mem_name == null) {
+			if (other.mem_name != null)
+				return false;
+		} else if (!mem_name.equals(other.mem_name))
+			return false;
+		if (mem_num == null) {
+			if (other.mem_num != null)
+				return false;
+		} else if (!mem_num.equals(other.mem_num))
+			return false;
+		if (mem_pw == null) {
+			if (other.mem_pw != null)
+				return false;
+		} else if (!mem_pw.equals(other.mem_pw))
+			return false;
+		if (mem_update == null) {
+			if (other.mem_update != null)
+				return false;
+		} else if (!mem_update.equals(other.mem_update))
+			return false;
+		return true;
+	}
 
 	public String getMem_idx() {
 		return mem_idx;	
@@ -117,18 +206,7 @@ public class UserVO implements java.io.Serializable{
 
 
 
-	public UserVO(String mem_idx, String mem_id, String mem_pw, String mem_name, String mem_num, String mem_cre,
-			String mem_date, String mem_update) {
-		super();
-		this.mem_idx = mem_idx;
-		this.mem_id = mem_id;
-		this.mem_pw = mem_pw;
-		this.mem_name = mem_name;
-		this.mem_num = mem_num;
-		this.mem_cre = mem_cre;
-		this.mem_date = mem_date;
-		this.mem_update = mem_update;
-	}
+
 
 
 } //all close

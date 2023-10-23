@@ -1,5 +1,8 @@
 package rm.init;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+
 import javax.sql.DataSource;
 
 import org.apache.commons.dbcp2.BasicDataSource;
@@ -26,11 +29,11 @@ public class ContextDataSource {
 
 		BasicDataSource dataSource = new BasicDataSource();
 
-		dataSource.setDriverClassName("com.postgresql.cj.jdbc.Driver"); //해요니가 찾아보고 설정
-		dataSource.setUrl("jdbc:postgresql://localhost:5432"); //127.0.0.1 = localhost
-		dataSource.setUsername("qwer1234"); //이메일
-		dataSource.setPassword("qwer1234");
-		dataSource.setDefaultAutoCommit(false);
+		dataSource.setDriverClassName("org.postgresql.Driver"); 
+		dataSource.setUrl("jdbc:postgresql://localhost:5432/routemate"); //127.0.0.1 = localhost
+		dataSource.setUsername("ttwmrk2002"); //이메일
+		dataSource.setPassword("qwer1234"); //3579  혹은 qwer1234
+//		dataSource.setDefaultAutoCommit(false);
 
 		return dataSource;
 	}

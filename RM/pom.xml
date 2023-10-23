@@ -74,6 +74,23 @@
 	    <scope>runtime</scope>
 	</dependency>
 	
+	<!-- https://mvnrepository.com/artifact/org.lucee/postgresql -->
+	<!-- 포스트그레 설정-->
+	<!-- <dependency>
+	    <groupId>org.lucee</groupId>
+	    <artifactId>postgresql</artifactId>
+	    <version>8.3-606.jdbc4</version>
+	</dependency> -->
+	
+	
+     <dependency>
+         <groupId>org.postgresql</groupId>
+         <artifactId>postgresql</artifactId>
+         <version>42.2.27.jre6</version>
+     </dependency>
+        
+	
+	
 	<!-- MyBatis 라이브러리 -->
 	<dependency>
 	    <groupId>org.mybatis</groupId>
