@@ -30,7 +30,7 @@ public class ContextDataSource {
 		BasicDataSource dataSource = new BasicDataSource();
 
 		dataSource.setDriverClassName("org.postgresql.Driver"); 
-		dataSource.setUrl("jdbc:postgresql://localhost:5432/routemate"); //127.0.0.1 = localhost
+		dataSource.setUrl("jdbc:postgresql://127.0.0.1:5432/routemate"); //127.0.0.1 = localhost
 		dataSource.setUsername("ttwmrk2002"); //이메일
 		dataSource.setPassword("qwer1234"); //3579  혹은 qwer1234
 //		dataSource.setDefaultAutoCommit(false);
