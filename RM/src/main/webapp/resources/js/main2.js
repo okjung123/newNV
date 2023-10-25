@@ -1,4 +1,5 @@
 
+
 (function($) {
 
 	var	$window = $(window),
@@ -255,7 +256,3 @@
 			});
 
 })(jQuery);
-
-
-
-

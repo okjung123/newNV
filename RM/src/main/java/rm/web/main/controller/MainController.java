@@ -54,6 +54,12 @@ public class MainController {
     }
 	
 	
+	@RequestMapping(value= "/main/button.do", method= RequestMethod.GET)
+	public String button() {
+		return "main/button";
+	}
+	
+	
 //	
 //	//로그인 요청처리용
 //	@RequestMapping(value="/main/login.do", method= {RequestMethod.GET, RequestMethod.POST })
