@@ -7,29 +7,31 @@
 <!-- 맵핑될 DAO 인터페이스의 Full name 을 줍니다. -->
 <mapper namespace="rm.web.main.mapper.MainMapper">
 
-
-<!--<select id="userSearch" resultType="String">
+	<select id="userSearch" resultType="String">
 		SELECT 1 AS TEST
-	</select> -->
+	</select> 
 	
 	<!-- 유저정보 저장용 -->
-	<resultMap id="resultUser" type="UserVO">
-		<result column="mem_idx"           property="mem_idx" />	            <!--회원번호-->
-		<result column="mem_id"            	property="mem_id"/> 		        <!--아이디-->
-		<result column="mem_pw"            	property="mem_pw"	/>	            <!--비번-->
-		<result column="mem_name"         property="mem_name"	/>	   		<!--이름-->
-		<result column="mem_num"           property="mem_num" />			<!--휴대폰번호-->
-		<result column="mem_cre"          	property="mem_cre"/> 	    		<!--가입일-->
-		<result column="mem_date"         	property="mem_date"	/>     	<!--접속기록-->
-		<result column="mem_update"       property="mem_update" />		<!--정보수정일-->
-	</resultMap>
+	<resultMap id="resultMember" type="UserVO">
+		<result column="MEM_IDX"           property="mem_idx" />	       
+		<result column="MEM_ID"            	property="mem_id"/> 		   
+		<result column="MEM_PW"            	property="mem_pw"	/>	       
+		<result column="MEM_NAME"         property="mem_name"	/>	   	
+		<result column="MEM_NUM"           property="mem_num" />		
+		<result column="MEM_CRE"          	property="mem_cre"/> 	    
+		<result column="MEM_DATE"         	property="mem_date"	/>     
+		<result column="MEM_UPDATE"       property="mem_update" />	
+		<result column="MEM_ADMIN"       property="mem_admin" />	
+		<result column="MEM_STAT"       property="mem_stat" />	
+		<result column="MEM_OBS"       property="mem_obs" />	
+	</resultMap>  
 
-		
+
 	<!-- 로그인 처리용 -->
-	<select id="selectUser"  parameterType="UserVO"  resultMap="resultUser">		
+	<select id="selectUser" parameterType="UserVO"  resultMap="resultMember">		
       select * 
-      from web_member
-      where mem_id = #{ mem_id }
+      from yolov8.membertb
+      where mem_id = #{mem_id}
 	</select>
 
 	

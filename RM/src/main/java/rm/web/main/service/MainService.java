@@ -10,7 +10,9 @@ import rm.web.main.vo.UserVO;
 
 public interface MainService {
 	
-
+	public void userSearch();
 	UserVO selectUser(String mem_id);		// 회원 1명 조회
+	
+	
 	ArrayList<UserVO> selectUserList(Paging page);	//회원 리스트 조회
 }

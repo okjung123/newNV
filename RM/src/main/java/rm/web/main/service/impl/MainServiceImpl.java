@@ -18,10 +18,14 @@ public class MainServiceImpl implements MainService {
 	@Autowired	private SqlSessionTemplate session;	
 
 
-
+	@Override
+	public void userSearch() {
+		return;
+	}
+	
 	@Override 
 	public UserVO selectUser(String mem_id) {		// 회원 1명 조회
-		return session.selectOne("mainMapper.selectUserList", mem_id);
+		return session.selectOne("mainMapper.selectUser", mem_id);
 	}
 
 
@@ -29,6 +33,9 @@ public class MainServiceImpl implements MainService {
 	public ArrayList<UserVO> selectUserList(Paging page) { 	//회원 리스트 조회
 		return mainMapper.selectUserList(page);
 	}
+
+
+
 	
 	
 	
