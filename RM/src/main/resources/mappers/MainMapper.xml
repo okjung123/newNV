@@ -10,28 +10,22 @@
 	<select id="userSearch" resultType="String">
 		SELECT 1 AS TEST
 	</select> 
-	
-	<!-- 유저정보 저장용 -->
-	<resultMap id="resultMember" type="UserVO">
-		<result column="MEM_IDX"           property="mem_idx" />	       
-		<result column="MEM_ID"            	property="mem_id"/> 		   
-		<result column="MEM_PW"            	property="mem_pw"	/>	       
-		<result column="MEM_NAME"         property="mem_name"	/>	   	
-		<result column="MEM_NUM"           property="mem_num" />		
-		<result column="MEM_CRE"          	property="mem_cre"/> 	    
-		<result column="MEM_DATE"         	property="mem_date"	/>     
-		<result column="MEM_UPDATE"       property="mem_update" />	
-		<result column="MEM_ADMIN"       property="mem_admin" />	
-		<result column="MEM_STAT"       property="mem_stat" />	
-		<result column="MEM_OBS"       property="mem_obs" />	
-	</resultMap>  
 
-
-	<!-- 로그인 처리용 -->
-	<select id="selectUser" parameterType="UserVO"  resultMap="resultMember">		
-      select * 
-      from yolov8.membertb
-      where mem_id = #{mem_id}
+	<select id="selectUser" parameterType="String"  resultMap="UserVO">		
+      SELECT /* selectUser 로그인 처리용 */
+      		 MEM_IDX      /* 회원번호 */
+		   , MEM_ID       /* 아이디 */
+		   , MEM_PW       /* 비번 */
+		   , MEM_NAME     /* 이름 */
+		   , MEM_NUM      /* 휴대폰번호 */
+		   , MEM_CRE      /* 가입일 */
+		   , MEM_DATE     /* 접속기록 */
+		   , MEM_UPDATE   /* 정보수정일 */
+		   , MEM_ADMIN
+		   , MEM_STAT
+		   , MEM_OBS
+        FROM YOLOV8.MEMBERTB
+       WHERE MEM_ID = #{mem_id}
 	</select>
 
 	

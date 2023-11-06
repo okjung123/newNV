@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 
 import javax.servlet.http.HttpSession;
 
-import org.apache.catalina.User;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -70,25 +70,25 @@ public class MainController {
 	}
 	
 	
-	//로그인 요청처리용
-	@RequestMapping(value="/main/login.do", method= {RequestMethod.GET, RequestMethod.POST })
-	public ModelAndView selectUser(ModelAndView mv, UserVO user, HttpSession session, SessionStatus status,Model model) {
-		
-		//전달온 회원 아이디로 먼저 정보조회함
-		UserVO loginUser = MainService.selectUser(user.getMem_id());
-		 if (loginUser.getMem_pw() != null)  {
-			
-		    session.setAttribute("loginUser", loginUser);
-		    status.setComplete();		//로그인 요청 성공 => 200을 전송하면 문제없는것임
-		    mv.setViewName("main/front");
-		    System.out.println("로그인 완료");
-		    
-		} else {
-			model.addAttribute("message", "로그인 실패 : 아이디나 암호를 확인해주세요<br>" + "또는, 로그인 제한된 회원인지 관리자에게 문의하세요.");	
-			mv.setViewName("main/error");
-		}//if
-		return mv;
-	}//method close
+//	//로그인 요청처리용
+//	@RequestMapping(value="/main/login.do", method= {RequestMethod.GET, RequestMethod.POST })
+//	public ModelAndView selectUser(ModelAndView mv, UserVO user, HttpSession session, SessionStatus status,Model model) {
+//		
+//		//전달온 회원 아이디로 먼저 정보조회함
+//		UserVO loginUser = MainService.selectUser(user.getMem_id());
+//		 if (loginUser.getMem_pw() != null)  {
+//			
+//		    session.setAttribute("loginUser", loginUser);
+//		    status.setComplete();		//로그인 요청 성공 => 200을 전송하면 문제없는것임
+//		    mv.setViewName("main/front");
+//		    System.out.println("로그인 완료");
+//		    
+//		} else {
+//			model.addAttribute("message", "로그인 실패 : 아이디나 암호를 확인해주세요<br>" + "또는, 로그인 제한된 회원인지 관리자에게 문의하세요.");	
+//			mv.setViewName("main/error");
+//		}//if
+//		return mv;
+//	}//method close
 	
 	
 	
