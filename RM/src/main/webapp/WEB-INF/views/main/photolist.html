@@ -15,7 +15,18 @@
 	ol, ul {
 	list-style: none; 
 	}	
-
+	
+	tr > th {
+	text-align: center;}
+	
+	tr {
+	text-align: center;
+	}
+	
+	h3 {
+	font-size: 25px;
+	color: #673F89;
+	}
 
    </style>
 </head>
@@ -54,21 +65,20 @@
 							</header>
 							
 							<!-- chart -->
-							<div style="width: 1000px;">
+							<div style="width: 1200px;">
 							    <canvas id="myChart" width="1000" height="400"></canvas>
 							</div>
    							
    							<br>
    							<hr>
    							
-							
 							<!-- table -->
 							<table class="charttb">
 							    <thead>
 							        <tr>
 							            <th colspan="4"><h3>월별 회원 TOP10</h3></th>
 							        </tr>
-							        <tr style="text-align: center;">
+							        <tr>
 							            <th>회원명</th>
 							            <th>전월</th>
 							            <th>당월</th>
@@ -140,6 +150,9 @@
 									</tr>
 							    </tbody>
 							</table>
+							<ul class="actions">
+ 							<li><a href="memberlist.do" class="button big">자세히보기</a></li>
+							</ul>
 						</section>
 					</div>
 				</div>
@@ -154,25 +167,25 @@
 									<h2>Menu</h2>
 								</header>
 								<ul>
-									<li><a href="front.do">Homepage</a></li> <!-- index.html 로 이동-->
+									<li><a href="front.do">Home</a></li> <!-- index.html 로 이동-->
 									<li>
 										<span class="opener">Photo</span>
 										<ul>
-											<li><a href="button.do">Photo list</a></li>
-											<li><a href="#">Photo status</a></li>
+											<li><a href="photolist.do">Photo list</a></li>
+											<li><a href="photostatus.do">Photo status</a></li>
 										</ul>
 									</li>
 									<li>
 										<span class="opener">member</span>
 										<ul>
-											<li><a href="#">Member list​</a></li>
-											<li><a href="#">Member info​</a></li>
+											<li><a href="memberlist.do">Member list​</a></li>
+											<!-- <li><a href="memberinfo.do">Member info​</a></li> -->
 										</ul>
 									</li>
-									<li><a href="front.do">object config</a></li> <!-- index.html 로 이동-->
-									<li><a href="#">logout</a></li> <!-- index.html 로 이동-->
+									<li><a href="objectconfig.do">object config</a></li> <!-- index.html 로 이동-->
+									<li><a href="index.do">logout</a></li> <!-- index.html 로 이동-->
 								</ul>
-							</nav>
+								</nav>
 
 
 						<!-- Section -->

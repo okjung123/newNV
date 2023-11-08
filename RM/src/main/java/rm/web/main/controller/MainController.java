@@ -40,9 +40,7 @@ public class MainController {
 	
 	public static void main(String[] args) {
 		System.out.println("test");
-		
 	    }
-	
 	
 	@Autowired 									
 	private MainService MainService;
@@ -52,22 +50,31 @@ public class MainController {
 	
 	//index페이지 이동 요청 처리용
 	@RequestMapping(value= "/main/index.do", method= RequestMethod.GET)
-    public String home() {
-        return "main/index";
-    }
-	
+    public String home() { return "main/index"; }
 	
 	//front페이지 이동 요청 처리용
 	@RequestMapping(value= "/main/front.do", method= RequestMethod.GET)
-    public String front() {
-        return "main/front";
-    }
+    public String front() { return "main/front"; }
 	
-	//button페이지 이동 요청 처리용
-	@RequestMapping(value= "/main/button.do", method= RequestMethod.GET)
-	public String button() {
-		return "main/button";
-	}
+	//photolist페이지 이동 요청 처리용
+	@RequestMapping(value= "/main/photolist.do", method= RequestMethod.GET)
+	public String photolist() {	return "main/photolist"; }
+	
+	//photostatus페이지 이동 요청 처리용
+	@RequestMapping(value= "/main/photostatus.do", method= RequestMethod.GET)
+	public String photostatus() {	return "main/photostatus"; }
+	
+	//memberlist페이지 이동 요청 처리용
+	@RequestMapping(value= "/main/memberlist.do", method= RequestMethod.GET)
+	public String memberlist() {	return "main/memberlist"; }
+	
+	//memberinfo페이지 이동 요청 처리용
+	@RequestMapping(value= "/main/memberinfo.do", method= RequestMethod.GET)
+	public String memberinfo() {	return "main/memberinfo"; }
+	
+	//objectconfig페이지 이동 요청 처리용
+	@RequestMapping(value= "/main/objectconfig.do", method= RequestMethod.GET)
+	public String objectconfig() {	return "main/objectconfig"; }
 	
 	
 //	//로그인 요청처리용
